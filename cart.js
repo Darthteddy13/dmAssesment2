@@ -35,7 +35,15 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+
+
+
+const summedPrice = cart.reduce(function(acc, curr)
+{
+    return acc + curr.price;
+}, 0)
+
+// console.log(summedPrice);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -55,7 +63,9 @@ const cart = [
 
 //CODE HERE
 
+const calcFinalPrice = (cartTotal, couponValue, tax) => cartTotal + (cartTotal * tax) - couponValue;
 
+// console.log(calcFinalPrice(10, 2, .50));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,7 +88,7 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    Customer needs an customer number to differentiate between customers as a string so it can be easily printed and used in other situations. Customer needs an email address to send info to as a string to hold all the various chars that may be in an email. Customer needs quanity as a number for the number of purchased items. products as an array to hold  instances of each product they are purchasing. And finally they need an address to ship to as a string to hold the variety of characters needed to hold an address
 
 */
 
@@ -88,3 +98,12 @@ const cart = [
 */
 
 //CODE HERE
+const customer = 
+{
+    custNumber: `1`,
+    custEmail: `email@email.com`,
+    custQuant: 0,
+    custProducts: [],
+    custAddress: `123 nowhere st nowhere, NW, 00000`
+
+}
