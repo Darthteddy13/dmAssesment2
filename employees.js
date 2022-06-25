@@ -21,6 +21,18 @@
 
 //CODE HERE
 
+class Employee
+{
+    constructor(name, shifts)
+    {
+        this.name = name;
+        this.shifts = shifts;
+    }
+
+    getSchedule = () => console.log(`${this.name} works on ${this.shifts}`);
+    // getSchedule = (name) => console.log(`${name} works on ${this.shifts}`);
+}
+
 
 
 /*
@@ -34,6 +46,7 @@
 */
 
 //CODE HERE
+const empOne = new Employee (`Jess`,`weekday mornings, weekday afternoons` )
 
 /*
     Call the `getSchedule` method on the
@@ -41,7 +54,8 @@
 */
 
 //CODE HERE
-
+empOne.getSchedule();
+// empOne.getSchedule(empOne.name);
 
 /*
     Make a copy of the empOne object
@@ -56,7 +70,15 @@
 */
 
 //CODE HERE
+const empTwo = {...empOne, name:`Nick`};
+// console.log(empTwo);
 
+// empTwo.getSchedule(); //This shows jess
+// empTwo.getSchedule(empTwo.name); //This shows nick
+console.log(empTwo); //This also shows nick
+/*
+Not sure what's going on when I call empTwo.getSchedule(); it prints Jess but when I console.log empTwo it shows Nick 
+*/
 
 
 //////////////////PROBLEM 2////////////////////
@@ -84,6 +106,20 @@
 
 //CODE HERE
 
+class Manager extends Employee
+{
+    constructor(name, shifts, employees)
+    {
+        super(name,shifts);
+        this.employees = employees;
+    }
+
+    getEmployees = () => console.log(`${this.name} manages ${this.employees}`);
+
+    addEmployee = (emp) => this.employees.push(emp);
+
+}
+
 
 
 /*
@@ -99,13 +135,16 @@
 
 //CODE HERE
 
+const manager = new Manager(`Winston`, `weekday mornings, weekday afternoons`, [`Cece`, `Schmidt`]);
+
 
 /*
     Call the `getEmployees` method on the
     `manager` object.  
 */
 
-//CODE HERE
+//CODE HERE]
+manager.getEmployees();
 
 /*
     Call the `addEmployee` method on the 
@@ -114,7 +153,7 @@
 */
 
 //CODE HERE 
-
+manager.addEmployee(`Coach`);
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -122,3 +161,4 @@
 */
 
 //CODE HERE
+manager.getEmployees();
