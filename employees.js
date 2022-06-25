@@ -75,7 +75,7 @@ const empTwo = {...empOne, name:`Nick`};
 
 // empTwo.getSchedule(); //This shows jess
 // empTwo.getSchedule(empTwo.name); //This shows nick
-console.log(empTwo); //This also shows nick
+//console.log(empTwo); //This also shows nick
 /*
 Not sure what's going on when I call empTwo.getSchedule(); it prints Jess but when I console.log empTwo it shows Nick 
 */
